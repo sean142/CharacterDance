@@ -242,10 +242,11 @@ public class ChangeModel : MonoBehaviour
         // 套用所選顏色到當前模型狀態
         ApplyColorSelection();
     }
+
     // 選擇某個模型後，套用該模型的設定
     public void ApplySelection()
     {
-        // 每次執行執行完更換模型，紀錄當前模型編號          
+        // 如果玩家選擇了新模型，而不是上一個模型
         if (selectedModelIndex != lastIndex)
         {
             for (int i = 0; i < models.Length; i++)
@@ -288,7 +289,6 @@ public class ChangeModel : MonoBehaviour
             lastIndex = selectedModelIndex;
         }
     }
-
 
     // 將該模型的位置、旋轉和材質顏色設為預設值
     private void ApplyDefaultState()
